@@ -1,0 +1,21 @@
+# Generated Java output
+**/target/
+**/build/
+*.class
+
+# Local IDE and OS files
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+local.properties
+
+# Bundled runtimes and release binaries
+wallet/dist/jre/
+wallet/dist/MAC/*.jdk/
+wallet/dist/*.exe
+
+# Local secrets
+.env
+.env.*
+!.env.example
