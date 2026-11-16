@@ -1,36 +1,32 @@
-# Software-Praktika — eVault coursework source snapshot
+# Software-Praktika
 
-A historical Java desktop project snapshot retained for software-practicum reference. The included application and utility library originate from **MHISoft eVault**; this repository does not claim original authorship of those upstream components.
+Java desktop coursework repository containing a source snapshot of [MHISoft eVault](https://github.com/mhisoft/eVault), an offline password-vault application, and its shared utility library.
 
-## Repository layout
+## Project overview
 
-| Directory | Contents |
+The application uses Swing for its desktop interface and includes password-vault management, file attachments, backup/import workflows, and automated tests.
+
+| Component | Contents |
 | --- | --- |
-| [wallet](wallet/) | Java Swing password-vault application, UI forms, resources, and TestNG tests |
-| [common-utils](common-utils/) | Shared Java utilities and tests |
-| [wallet/dist](wallet/dist/) | Historical packaging configuration, launcher script, and screenshots |
+| [wallet](wallet/) | Desktop application, UI forms, resources, and tests |
+| [common-utils](common-utils/) | Shared utilities for files, events, logging, encryption, and ZIP handling |
+| [Packaging assets](wallet/dist/) | Launcher configuration, icons, and application screenshots |
 
-## Origin and attribution
+## Technology
 
-- [MHISoft eVault](https://github.com/mhisoft/eVault)
-- [MHISoft project referenced by the utility module](https://github.com/mhisoft/evault-project)
-- The historical [.gitmodules](.gitmodules) records the original module URLs. The modules in this snapshot are checked-in directories, not active Git submodules.
-- Original README files, source headers, and license notices are retained. See [common-utils/LICENSE](common-utils/LICENSE) and the [wallet license section](wallet/README.md#license).
+Java, Swing, Maven, TestNG, and IntelliJ UI Designer forms.
 
-The upstream README includes historical release, donation, and bounty information. Those statements belong to the upstream author and are not new offers by this repository's maintainer.
+## Build requirements
 
-## Build status and limitations
+Both Maven modules reference `../parent-pom/pom.xml`, which is not included in this snapshot. Restore the matching upstream parent project and resolve the legacy dependencies before building. Packaging scripts also require a separately installed Java runtime and updated local paths.
 
-This is a **legacy source snapshot**, not a verified runnable release. The Maven configuration in `wallet/pom.xml` expects `../parent-pom/pom.xml`, which is absent from this snapshot. Resolve the matching upstream parent configuration and legacy dependencies before attempting a build. No successful build or test run is claimed here.
+## Attribution and license
 
-Historical packaging files refer to bundled Java runtimes and executables that are no longer tracked. They are retained as reference material and require adjustment before packaging. Install a suitable JDK separately.
+The application and utility library originate from MHISoft eVault. Upstream authorship and source notices are preserved.
 
-## Repository cleanup
+- [Original application](https://github.com/mhisoft/eVault)
+- [Original project referenced by common-utils](https://github.com/mhisoft/evault-project)
+- [Apache 2.0 license](common-utils/LICENSE)
+- [Application license notes](wallet/README.md#license)
 
-The November 2026 cleanup:
-- moved the project from `OneDrive/Desktop/Repo/evault-project/` to the repository root;
-- removed bundled Java runtimes and prebuilt Windows executables from the current tree;
-- retained source, tests, assets, build metadata, and upstream attribution;
-- added ignore rules for generated output and local development files.
-
-Earlier contents remain recoverable through Git history. This cleanup did not change application logic or establish the security of the historical password-vault implementation.
+The entries in [.gitmodules](.gitmodules) document the original module URLs; the modules here are checked-in directories.
